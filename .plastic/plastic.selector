@@ -1,0 +1,4 @@
+repository "LegacyOfTheKeyCollector/LegacyOfTheKeyCollector@4673484662568@cloud"
+  path "/"
+    br "/main"
+    co "/main"
