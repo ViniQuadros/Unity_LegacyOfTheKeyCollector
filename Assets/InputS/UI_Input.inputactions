@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "UI_Input",
+    "maps": [
+        {
+            "name": "UI_Interactions",
+            "id": "119673b2-5597-4ec3-8cc3-aa76b949884a",
+            "actions": [
+                {
+                    "name": "SkipDialog",
+                    "type": "Button",
+                    "id": "5f53b7fb-7c6a-4b9b-888a-52b467847431",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "829c8294-5b3f-4044-9111-9c7e3773a200",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
