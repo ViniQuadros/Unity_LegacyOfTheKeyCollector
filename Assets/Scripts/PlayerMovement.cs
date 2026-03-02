@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10.0f;
 
-    private Camera mainCamera;
     private Rigidbody2D rb;
     private PlayerInput playerInput;
     private InputAction moveAction;
+
 
     void Start()
     {
@@ -16,16 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
-
-        mainCamera = Camera.main;
-    }
-
-    void Update()
-    {
-        Vector3 cameraPosition = transform.position;
-        cameraPosition.z = -10;
-
-        mainCamera.transform.position = cameraPosition;
     }
 
     private void FixedUpdate()
