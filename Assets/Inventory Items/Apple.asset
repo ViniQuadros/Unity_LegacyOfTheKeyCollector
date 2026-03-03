@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b241e1cb6cfd841970ead31ce1df26, type: 3}
+  m_Name: Apple
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItems
+  itemIcon: {fileID: 2531912841731457222, guid: 4b6fdcf2aac9fd1459302b894d2d4b7d, type: 3}
+  itemName: Apple
+  itemDescription: I can use this apple to heal! (+10 HP)
+  itemType: 0
+  maxAmount: 10
+  currentAmount: 0

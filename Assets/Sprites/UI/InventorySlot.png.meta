@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: ef74ff64d2a8c18418a63cb5d36402fb
+guid: 89791b632a6a266488ac841eb6b53cd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2948254225124216898
-    second: Simple Milk and grass item_0
-  - first:
-      213: 211033116252206595
-    second: Simple Milk and grass item_1
-  - first:
-      213: -2449982667496561888
-    second: Simple Milk and grass item_2
-  - first:
-      213: 5965478420860110111
-    second: Simple Milk and grass item_3
+      213: 4446041084236756038
+    second: InventorySlot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -109,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Simple Milk and grass item_0
+      name: InventorySlot_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 14
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 240d214e89d4ae820800000000000000
-      internalID: 2948254225124216898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Milk and grass item_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 0
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3067e0a408dbde200800000000000000
-      internalID: 211033116252206595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Milk and grass item_2
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 0
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 023e0069eb9effdd0800000000000000
-      internalID: -2449982667496561888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Milk and grass item_3
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 0
-        width: 17
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f1500ae6403a9c250800000000000000
-      internalID: 5965478420860110111
+      spriteID: 64479ba5fc283bd30800000000000000
+      internalID: 4446041084236756038
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Simple Milk and grass item_0: 2948254225124216898
-      Simple Milk and grass item_1: 211033116252206595
-      Simple Milk and grass item_2: -2449982667496561888
-      Simple Milk and grass item_3: 5965478420860110111
+      InventorySlot_0: 4446041084236756038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

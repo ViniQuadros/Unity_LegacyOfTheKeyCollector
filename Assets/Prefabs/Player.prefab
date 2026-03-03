@@ -14,11 +14,12 @@ GameObject:
   - component: {fileID: 3164827685560843599}
   - component: {fileID: 4754171908395769751}
   - component: {fileID: 1107754754461387573}
-  - component: {fileID: 7904083288341853529}
-  - component: {fileID: 8598387578686817358}
+  - component: {fileID: 5834621052114473601}
+  - component: {fileID: 4871505211150086661}
+  - component: {fileID: 8438185686282807700}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +224,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7904083288341853529
+--- !u!114 &5834621052114473601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,11 +233,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 824439191036167245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f8d19015d645f4f9d0049844516cd2, type: 3}
+  m_Script: {fileID: 11500000, guid: de9e357d4de49a14fa56bc00be1ce2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 15
---- !u!114 &8598387578686817358
+  speed: 20
+--- !u!114 &4871505211150086661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,7 +246,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 824439191036167245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26a71e29de3efa447a4a0c0734534402, type: 3}
+  m_Script: {fileID: 11500000, guid: ab33d377a76b40b4ab37952d079bb92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+--- !u!114 &8438185686282807700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824439191036167245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7d08c283f98604fbd624de51df61a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
 --- !u!1 &4473896323014332134
