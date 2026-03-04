@@ -1,20 +1,56 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    private List<InventoryItems> playerInventory = new List<InventoryItems>();
+    public GridLayoutGroup inventorySlots;
+    public GameObject slot;
+
+    private int currentInventorySlot = 0;
+    private int maxGridSize = 10;
+    private bool isFull = false;
+
+    private void Start()
+    {
+        for (int i = 0; i < maxGridSize; i++)
+        {
+            Instantiate(slot, inventorySlots.transform);
+        }
+    }
 
     public void AddToInventory(InventoryItems item)
     {
-        if (playerInventory.Contains(item) && item.maxAmount <= 1)
+        if (isFull)
             return;
 
-        playerInventory.Add(item);
-
-        foreach (var c in playerInventory)
+        foreach (Transform i in inventorySlots.transform)
         {
-            Debug.Log(c.itemName + "\n");
+            Slot newItem = i.GetComponent<Slot>();
+
+            if (newItem.GetItem() != null)
+            {
+                if (newItem.GetItemName() == item.itemName)
+                {
+                    newItem.AddAmount();
+                    break;
+                }
+            }
+            else if (newItem.GetItem() == null)
+            {
+                newItem.SetItem(item);
+                newItem.SetIcon(item.itemIcon);
+                newItem.AddAmount();
+                currentInventorySlot++;
+                if (currentInventorySlot == maxGridSize)
+                    isFull = true;
+                break;
+            }
         }
+    }
+
+    public bool GetIsFull() 
+    { 
+        return isFull;
     }
 }

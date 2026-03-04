@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Apple
   itemDescription: I can use this apple to heal! (+10 HP)
   itemType: 0
+  stackable: 1
   maxAmount: 10
-  currentAmount: 0

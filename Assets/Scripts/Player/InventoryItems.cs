@@ -13,7 +13,7 @@ public class InventoryItems : ScriptableObject
     public string itemName;
     public string itemDescription;
     public ItemType itemType;
+    public bool stackable;
 
     public int maxAmount;
-    public int currentAmount;
 }
