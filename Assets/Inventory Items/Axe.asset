@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: Axe
   itemDescription: A simple axe I use to kill my enemies.
   itemType: 1
+  stackable: 0
   maxAmount: 1
-  currentAmount: 0
+  collectableEffect: {fileID: 11400000, guid: 98846dd6a90741d47baa94cd8bbfda57, type: 2}

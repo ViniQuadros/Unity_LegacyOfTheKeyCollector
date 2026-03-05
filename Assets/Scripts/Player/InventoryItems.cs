@@ -14,6 +14,6 @@ public class InventoryItems : ScriptableObject
     public string itemDescription;
     public ItemType itemType;
     public bool stackable;
-
     public int maxAmount;
+    public CollectableEffects collectableEffect;
 }

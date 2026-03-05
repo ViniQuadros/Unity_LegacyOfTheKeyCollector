@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction moveAction;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +29,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector2 movementDirection = transform.up * input.y + transform.right * input.x;
         movementDirection.Normalize();
-        rb.linearVelocity = movementDirection;
+        rb.linearVelocity = movementDirection * speed;
     }
 }

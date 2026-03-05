@@ -18,3 +18,4 @@ MonoBehaviour:
   itemType: 0
   stackable: 1
   maxAmount: 10
+  collectableEffect: {fileID: 11400000, guid: f6f759e0050e501498aba74c945d740d, type: 2}
