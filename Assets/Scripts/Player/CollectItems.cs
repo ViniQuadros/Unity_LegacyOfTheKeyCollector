@@ -15,8 +15,7 @@ public class CollectItems : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inventory.AddToInventory(item);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }

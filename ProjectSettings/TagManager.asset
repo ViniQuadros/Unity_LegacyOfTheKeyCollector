@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Scenario
     uniqueID: 1286555319
+    locked: 0
+  - name: Props
+    uniqueID: 1126690979
     locked: 0
   - name: Player
     uniqueID: 45159079
