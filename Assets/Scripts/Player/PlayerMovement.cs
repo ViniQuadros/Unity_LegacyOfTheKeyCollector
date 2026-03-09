@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
+        DontDestroyOnLoad(gameObject);
     }
 
     private void FixedUpdate()

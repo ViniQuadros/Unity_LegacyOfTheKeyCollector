@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
-    private InventoryItems item;
+    [SerializeField] private InventoryItems item;
 
     public Image icon;
     public TextMeshProUGUI amount;
@@ -17,12 +17,20 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private int currentAmount = 0;
 
+    private GameObject dragIcon;
+    private RectTransform dragPlane;
+
     private void Start()
     {
         descriptionPanel.color = new Color(descriptionPanel.color.r, descriptionPanel.color.g, descriptionPanel.color.b, 0);
         i_name.color = new Color(i_name.color.r, i_name.color.g, i_name.color.b, 0);
         description.color = new Color(description.color.r, description.color.g, description.color.b, 0);
         descriptionPanel.gameObject.SetActive(false);
+
+        if (item != null)
+        {
+            SetItemToSlot(item);
+        }
     }
 
     public void SetItemToSlot(InventoryItems newItem)
@@ -133,5 +141,68 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             StartCoroutine(HideDescription());
         }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (item == null)
+            return;
+
+        var canvas = GetComponentInParent<Canvas>();
+        if (canvas == null)
+            return;
+
+        dragPlane = canvas.transform as RectTransform;
+
+        dragIcon = new GameObject("DragIcon");
+        dragIcon.transform.SetParent(canvas.transform, false);
+        dragIcon.transform.SetAsLastSibling();
+
+        Image img = dragIcon.AddComponent<Image>();
+        img.sprite = icon.sprite;
+        img.raycastTarget = false;
+
+        RectTransform rt = dragIcon.GetComponent<RectTransform>();
+        rt.sizeDelta = icon.rectTransform.sizeDelta;
+
+        SetDragIconPosition(eventData);
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (dragIcon != null)
+            Destroy(dragIcon);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        SetDragIconPosition(eventData);
+    }
+
+    private void SetDragIconPosition(PointerEventData data)
+    {
+        if (item == null)
+            return;
+
+        var obj = dragIcon.transform;
+
+        Vector3 globalMousePos;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            dragPlane,
+            data.position,
+            data.pressEventCamera,
+            out globalMousePos))
+        {
+            obj.position = globalMousePos;
+            obj.rotation = dragPlane.rotation;
+        }
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        if (item == null)
+            return;
+
+        Debug.Log("Dropped object was: " + eventData.pointerDrag);
     }
 }
