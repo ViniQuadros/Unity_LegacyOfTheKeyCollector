@@ -12,12 +12,6 @@ public class Chests : MonoBehaviour, I_Interactable
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Interact()
     {
         isActive = true;
@@ -28,8 +22,13 @@ public class Chests : MonoBehaviour, I_Interactable
     {
         if (collision.CompareTag("Player") && isActive == true)
         {
-            chestCanvas.SetActive(false);
-            isActive = false;
+            CloseChestUI();
         }
+    }
+
+    public void CloseChestUI()
+    {
+        chestCanvas.SetActive(false);
+        isActive = false;
     }
 }

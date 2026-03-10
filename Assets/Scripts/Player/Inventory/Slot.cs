@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -19,6 +20,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
 
     private GameObject dragIcon;
     private RectTransform dragPlane;
+    private static Slot dragSlot;
 
     private void Start()
     {
@@ -40,6 +42,21 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
         AddAmount();
         i_name.text = newItem.itemName;
         description.text = newItem.itemDescription;
+    }
+
+    public static void RemoveItemFromSlot()
+    {
+        if (dragSlot == null)
+            return;
+
+        dragSlot.icon.sprite = null;
+        dragSlot.amount.text = "";
+        dragSlot.i_name.text = "";
+        dragSlot.description.text = "";
+        dragSlot.item = null;
+        dragSlot.currentAmount = 0;
+
+        dragSlot = null;
     }
 
     public void AddAmount()
@@ -147,6 +164,10 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
     {
         if (item == null)
             return;
+        if (dragSlot != null)
+            return;
+
+        dragSlot = this;
 
         var canvas = GetComponentInParent<Canvas>();
         if (canvas == null)
@@ -168,15 +189,50 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
         SetDragIconPosition(eventData);
     }
 
+    public void OnDrag(PointerEventData eventData)
+    {
+        SetDragIconPosition(eventData);
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        if (Slot.dragSlot == null)
+            return;
+
+        GameObject target = eventData.pointerCurrentRaycast.gameObject;
+
+        if (target == null)
+            return;
+
+        Slot newSlotForItem = target.GetComponentInParent<Slot>();
+
+        if (newSlotForItem == null)
+            return;
+        if (newSlotForItem == Slot.dragSlot)
+            return;
+
+        InventoryItems draggedItem = Slot.dragSlot.GetItem();
+        if (draggedItem == null)
+            return;
+
+        if (newSlotForItem.GetItem() == null)
+        {
+            newSlotForItem.SetItemToSlot(draggedItem);
+            Slot.RemoveItemFromSlot();
+        }
+        else if (newSlotForItem.GetItem() == draggedItem)
+        {
+            newSlotForItem.AddAmount();
+            Slot.RemoveItemFromSlot();
+        }
+    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
         if (dragIcon != null)
             Destroy(dragIcon);
-    }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        SetDragIconPosition(eventData);
+        dragSlot = null;
     }
 
     private void SetDragIconPosition(PointerEventData data)
@@ -196,13 +252,5 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
             obj.position = globalMousePos;
             obj.rotation = dragPlane.rotation;
         }
-    }
-
-    public void OnDrop(PointerEventData eventData)
-    {
-        if (item == null)
-            return;
-
-        Debug.Log("Dropped object was: " + eventData.pointerDrag);
     }
 }
