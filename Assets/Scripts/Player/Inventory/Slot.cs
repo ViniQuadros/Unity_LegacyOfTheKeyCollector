@@ -18,9 +18,16 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
 
     private int currentAmount = 0;
 
+    private static Canvas dragCanvas;
     private GameObject dragIcon;
     private RectTransform dragPlane;
     private static Slot dragSlot;
+
+    void Awake()
+    {
+        if (dragCanvas == null)
+            dragCanvas = GameObject.Find("DragCanvas").GetComponent<Canvas>();
+    }
 
     private void Start()
     {
@@ -164,19 +171,18 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
     {
         if (item == null)
             return;
+
         if (dragSlot != null)
             return;
 
-        dragSlot = this;
-
-        var canvas = GetComponentInParent<Canvas>();
-        if (canvas == null)
+        if (dragCanvas == null)
             return;
 
-        dragPlane = canvas.transform as RectTransform;
+        dragSlot = this;
+        dragPlane = dragCanvas.transform as RectTransform;
 
         dragIcon = new GameObject("DragIcon");
-        dragIcon.transform.SetParent(canvas.transform, false);
+        dragIcon.transform.SetParent(dragCanvas.transform, false);
         dragIcon.transform.SetAsLastSibling();
 
         Image img = dragIcon.AddComponent<Image>();
@@ -237,20 +243,19 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
 
     private void SetDragIconPosition(PointerEventData data)
     {
-        if (item == null)
+        if (dragIcon == null)
             return;
 
-        var obj = dragIcon.transform;
+        RectTransform rt = dragIcon.GetComponent<RectTransform>();
 
-        Vector3 globalMousePos;
-        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
+        Vector2 localPoint;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
             dragPlane,
             data.position,
             data.pressEventCamera,
-            out globalMousePos))
+            out localPoint))
         {
-            obj.position = globalMousePos;
-            obj.rotation = dragPlane.rotation;
+            rt.localPosition = localPoint;
         }
     }
 }

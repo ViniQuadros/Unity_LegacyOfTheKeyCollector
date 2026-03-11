@@ -26,6 +26,11 @@ public class PlayerHealth : MonoBehaviour
         CheckStatus();
     }
 
+    public bool isFullHealth()
+    {
+        return currentHealth == maxHealth;
+    }
+
     public void Heal(int heal)
     {
         currentHealth += heal;

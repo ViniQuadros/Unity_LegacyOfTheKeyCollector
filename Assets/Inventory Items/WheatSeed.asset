@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81b241e1cb6cfd841970ead31ce1df26, type: 3}
-  m_Name: Apple
+  m_Name: WheatSeed
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItems
-  itemIcon: {fileID: 2531912841731457222, guid: 4b6fdcf2aac9fd1459302b894d2d4b7d, type: 3}
-  itemName: Apple
-  itemDescription: I can use this apple to heal! (+10 HP)
+  itemIcon: {fileID: 5196230094273877852, guid: 5019b527e22397d4b81330e5277ff983, type: 3}
+  itemName: Wheat Seed
+  itemDescription: I can use this to plan Wheat!
   itemType: 0
   stackable: 1
   maxAmount: 99
-  collectableEffect: {fileID: 11400000, guid: f6f759e0050e501498aba74c945d740d, type: 2}
+  collectableEffect: {fileID: 11400000, guid: c5af66527353b2c4d949dbd7e09a82c2, type: 2}

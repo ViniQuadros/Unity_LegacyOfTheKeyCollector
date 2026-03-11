@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc234c7620292b740a4c2633fd8d7536, type: 3}
-  m_Name: AxeAttack
-  m_EditorClassIdentifier: Assembly-CSharp::Attack
-  damage: 20
+  m_Script: {fileID: 11500000, guid: ad6ba4bc1d79fe5428ec0c762e303d0d, type: 3}
+  m_Name: E_PlantPlumSeed
+  m_EditorClassIdentifier: Assembly-CSharp::PlantSeed

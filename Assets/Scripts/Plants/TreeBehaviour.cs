@@ -15,6 +15,11 @@ public class TreeBehaviour : MonoBehaviour, I_Interactable
     private SpriteRenderer currentSprite;
     [SerializeField] private GameObject player;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         currentSprite = GetComponent<SpriteRenderer>();

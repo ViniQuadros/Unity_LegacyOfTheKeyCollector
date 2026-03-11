@@ -9,13 +9,26 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction moveAction;
 
+    public static PlayerMovement instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
-        DontDestroyOnLoad(gameObject);
     }
 
     private void FixedUpdate()
