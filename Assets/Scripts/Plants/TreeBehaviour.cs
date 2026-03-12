@@ -1,7 +1,6 @@
+using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class TreeBehaviour : MonoBehaviour, I_Interactable
 {
@@ -10,19 +9,25 @@ public class TreeBehaviour : MonoBehaviour, I_Interactable
     public GameObject fruit;
     public float force;
 
+    private float refillTime;
     private float cooldown = 180f;
     private bool hasFruit = true;
     private SpriteRenderer currentSprite;
     [SerializeField] private GameObject player;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     void Start()
     {
         currentSprite = GetComponent<SpriteRenderer>();
+    }
+
+    void Update()
+    {
+        if (!hasFruit && Time.time >= refillTime)
+        {
+            currentSprite.sprite = fullTree;
+            hasFruit = true;
+        }
     }
 
     public void Interact()
@@ -38,13 +43,6 @@ public class TreeBehaviour : MonoBehaviour, I_Interactable
 
         currentSprite.sprite = emptyTree;
         hasFruit = false;
-        StartCoroutine(RefillTree());
-    }
-
-    private IEnumerator RefillTree()
-    {
-        yield return new WaitForSeconds(cooldown);
-        currentSprite.sprite = fullTree;
-        hasFruit = true;
+        refillTime = Time.time + cooldown;
     }
 }

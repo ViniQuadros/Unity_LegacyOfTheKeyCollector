@@ -5,7 +5,7 @@ public class Attack : CollectableEffects
 {
     public float damage;
 
-    public override void ApplyEffect(GameObject target)
+    public override void ApplyEffect(GameObject target, Slot slot)
     {
         Debug.Log("Damage: " + damage);
     }

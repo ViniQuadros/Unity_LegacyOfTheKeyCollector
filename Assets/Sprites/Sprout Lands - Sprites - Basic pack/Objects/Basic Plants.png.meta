@@ -141,7 +141,7 @@ TextureImporter:
         width: 14
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -155,7 +155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_1
+      name: Wheat1
       rect:
         serializedVersion: 2
         x: 16
@@ -163,7 +163,7 @@ TextureImporter:
         width: 15
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,7 +177,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_2
+      name: Wheat2
       rect:
         serializedVersion: 2
         x: 32
@@ -185,7 +185,7 @@ TextureImporter:
         width: 17
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,7 +199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_3
+      name: Wheat3
       rect:
         serializedVersion: 2
         x: 48
@@ -207,7 +207,7 @@ TextureImporter:
         width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,7 +221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_4
+      name: Wheat4
       rect:
         serializedVersion: 2
         x: 64
@@ -229,7 +229,7 @@ TextureImporter:
         width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_5
+      name: Wheat
       rect:
         serializedVersion: 2
         x: 80
@@ -251,7 +251,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_6
+      name: Plum
       rect:
         serializedVersion: 2
         x: 81
@@ -273,7 +273,7 @@ TextureImporter:
         width: 14
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -295,7 +295,7 @@ TextureImporter:
         width: 14
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,7 +309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_8
+      name: Plum1
       rect:
         serializedVersion: 2
         x: 21
@@ -317,7 +317,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,7 +331,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_9
+      name: Plum2
       rect:
         serializedVersion: 2
         x: 35
@@ -339,7 +339,7 @@ TextureImporter:
         width: 11
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,7 +353,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_10
+      name: Plum3
       rect:
         serializedVersion: 2
         x: 48
@@ -361,7 +361,7 @@ TextureImporter:
         width: 15
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Plants_11
+      name: Plum4
       rect:
         serializedVersion: 2
         x: 64
@@ -383,7 +383,7 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6e8c766b7f7795d42bf21f5a73cd791a
     internalID: 0
     vertices: []
     indices: 
@@ -411,17 +411,17 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Basic Plants_0: 5196230094273877852
-      Basic Plants_1: 7842502339710366499
-      Basic Plants_10: -8097741200915394387
-      Basic Plants_11: 5822373649741285269
-      Basic Plants_2: 8009980020533041875
-      Basic Plants_3: 873675997408803650
-      Basic Plants_4: 8411801333702420389
-      Basic Plants_5: -5659601288151787448
-      Basic Plants_6: -386788524301670192
       Basic Plants_7: -1361314268720151567
-      Basic Plants_8: 6325485877500199750
-      Basic Plants_9: -8709406779607625839
+      Plum: -386788524301670192
+      Plum1: 6325485877500199750
+      Plum2: -8709406779607625839
+      Plum3: -8097741200915394387
+      Plum4: 5822373649741285269
+      Wheat: -5659601288151787448
+      Wheat1: 7842502339710366499
+      Wheat2: 8009980020533041875
+      Wheat3: 873675997408803650
+      Wheat4: 8411801333702420389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

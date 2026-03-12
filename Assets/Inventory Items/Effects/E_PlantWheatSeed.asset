@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6ba4bc1d79fe5428ec0c762e303d0d, type: 3}
   m_Name: E_PlantWheatSeed
   m_EditorClassIdentifier: Assembly-CSharp::PlantSeed
+  tilePlants: {fileID: 11400000, guid: 5a45319709b994a48a96ac1f56ad8c01, type: 2}
+  seed: {fileID: 7030548013290538520, guid: 27687da7729671a42bef9fe6a4f597f8, type: 3}

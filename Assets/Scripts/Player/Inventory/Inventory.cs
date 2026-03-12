@@ -106,8 +106,7 @@ public class Inventory : MonoBehaviour
             Slot slot = inventorySlots.transform.GetChild(currentInventoryIndex).gameObject.GetComponent<Slot>();
             if (slot.GetItem() != null)
             {
-                slot.GetItem().collectableEffect.ApplyEffect(gameObject);
-                slot.RemoveAmount();
+                slot.GetItem().collectableEffect.ApplyEffect(gameObject, slot);
             }
         }
     }

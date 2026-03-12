@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Tilled_Dirt_Wide_v2_34
+  m_Name: Tile_Preview
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 746142763, guid: a6cb8a268edec714ea1bc4257f6e23ac, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3751987, g: 0.9056604, b: 0.252047, a: 1}
   m_Transform:
     e00: 1
     e01: 0

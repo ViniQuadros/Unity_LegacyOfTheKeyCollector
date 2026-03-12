@@ -5,7 +5,7 @@ public class HealEffect : CollectableEffects
 {
     public int amount;
 
-    public override void ApplyEffect(GameObject target)
+    public override void ApplyEffect(GameObject target, Slot slot)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
@@ -13,6 +13,7 @@ public class HealEffect : CollectableEffects
         if (playerHealth.isFullHealth())
         {
            playerHealth.Heal(amount);
+           slot.RemoveAmount();
         }
     }
 }
