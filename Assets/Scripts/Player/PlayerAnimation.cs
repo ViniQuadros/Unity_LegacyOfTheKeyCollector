@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
@@ -6,6 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     private Animator animator;
 
     private bool isMoving = false;
+    private bool isAttacking = false;
 
     void Start()
     {
@@ -30,5 +32,21 @@ public class PlayerAnimation : MonoBehaviour
         }
 
         animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isAttacking", isAttacking);
+    }
+
+    public void SetIsAttacking()
+    {
+        if (!isAttacking)
+        {
+            StartCoroutine(PerformAttack());
+        }
+    }
+
+    private IEnumerator PerformAttack()
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(.8f);
+        isAttacking = false;
     }
 }

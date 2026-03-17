@@ -7,6 +7,8 @@ public class Attack : CollectableEffects
 
     public override void ApplyEffect(GameObject target, Slot slot)
     {
-        Debug.Log("Damage: " + damage);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerAnimation animator = player.GetComponent<PlayerAnimation>();
+        animator.SetIsAttacking();
     }
 }
