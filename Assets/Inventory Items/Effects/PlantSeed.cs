@@ -12,11 +12,11 @@ public class PlantSeed : CollectableEffects
     {
         tilemap = GameObject.FindGameObjectWithTag("TerrainTiles").GetComponent<Tilemap>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Vector3Int tilePos = tilemap.WorldToCell(player.transform.position);
+        TileBase tileB = tilemap.GetTile(Vector3Int.RoundToInt(player.transform.position));
 
-        if (tilemap.GetTile(tilePos) == tilePlants)
+        if (tileB == tilePlants)
         {
-            Vector3 worldPos = tilemap.GetCellCenterWorld(tilePos);
+            Vector3 worldPos = tilemap.GetCellCenterWorld(Vector3Int.RoundToInt(player.transform.position));
             Instantiate(seed, worldPos, Quaternion.identity);
             slot.RemoveAmount();
         }

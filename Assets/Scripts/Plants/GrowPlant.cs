@@ -1,16 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 public class GrowPlant : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private int phases = 0;
+    public Sprite[] growStages;
+    public GameObject plant;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = growStages[phases];
+        StartCoroutine(StartGrowing());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator StartGrowing()
     {
-        
+        for (int i = 0; i < growStages.Length - 1; i++)
+        {
+            yield return new WaitForSeconds(1);
+            phases++;
+            spriteRenderer.sprite = growStages[phases];
+        }
     }
 }

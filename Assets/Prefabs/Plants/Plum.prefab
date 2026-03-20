@@ -104,3 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a6d1b27845dfb459b047d1cd52d9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  growStages:
+  - {fileID: 6325485877500199750, guid: 5019b527e22397d4b81330e5277ff983, type: 3}
+  - {fileID: -8709406779607625839, guid: 5019b527e22397d4b81330e5277ff983, type: 3}
+  - {fileID: -8097741200915394387, guid: 5019b527e22397d4b81330e5277ff983, type: 3}
+  - {fileID: 5822373649741285269, guid: 5019b527e22397d4b81330e5277ff983, type: 3}

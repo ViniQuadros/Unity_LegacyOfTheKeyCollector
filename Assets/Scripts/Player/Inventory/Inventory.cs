@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
 
     private PlayerInput playerInput;
     private InputAction useItem;
+    private InputAction selectAction;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class Inventory : MonoBehaviour
 
         playerInput = GetComponent<PlayerInput>();
         useItem = playerInput.actions["UseItem"];
+        selectAction = playerInput.actions["SelectInventorySlot"];
 
         Image selectedSlot = inventorySlots.transform.GetChild(currentInventoryIndex).gameObject.GetComponent<Image>();
         if (selectedSlot != null)
@@ -34,7 +36,8 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        SelectInventoryItem();
+        SelectInventoryItemWithMouse();
+        SelectInventoryItemWithKeyboard();
         UseItem();
     }
 
@@ -71,7 +74,7 @@ public class Inventory : MonoBehaviour
         return isFull;
     }
 
-    private void SelectInventoryItem()
+    private void SelectInventoryItemWithMouse()
     {
         float scrollY = Mouse.current.scroll.ReadValue().y;
 
@@ -87,16 +90,25 @@ public class Inventory : MonoBehaviour
         if (currentInventoryIndex < 0)
             currentInventoryIndex = maxGridSize - 1;
 
-        for (int i = 0; i < inventorySlots.transform.childCount; i++)
-        {
-            Image slotImage = inventorySlots.transform.GetChild(i).GetComponent<Image>();
-            if (slotImage != null)
-                slotImage.color = Color.white;
-        }
+        SelectedInventoryUI();
+    }
 
-        Image selectedSlot = inventorySlots.transform.GetChild(currentInventoryIndex).gameObject.GetComponent<Image>();
-        if (selectedSlot != null)
-            selectedSlot.color = Color.green;
+    private void SelectInventoryItemWithKeyboard()
+    {
+        if (selectAction.WasPressedThisFrame())
+        {
+            int bindingIndex = selectAction.GetBindingIndexForControl(selectAction.activeControl);
+            if (bindingIndex >= 1)
+            {
+                currentInventoryIndex = bindingIndex - 1;
+            }
+            else if (bindingIndex == 0)
+            {
+                currentInventoryIndex = maxGridSize - 1;
+            }
+                Debug.Log(currentInventoryIndex);
+            SelectedInventoryUI();
+        }
     }
 
     private void UseItem()
@@ -109,5 +121,19 @@ public class Inventory : MonoBehaviour
                 slot.GetItem().collectableEffect.ApplyEffect(gameObject, slot);
             }
         }
+    }
+
+    private void SelectedInventoryUI()
+    {
+        for (int i = 0; i < inventorySlots.transform.childCount; i++)
+        {
+            Image slotImage = inventorySlots.transform.GetChild(i).GetComponent<Image>();
+            if (slotImage != null)
+                slotImage.color = Color.white;
+        }
+
+        Image selectedSlot = inventorySlots.transform.GetChild(currentInventoryIndex).gameObject.GetComponent<Image>();
+        if (selectedSlot != null)
+            selectedSlot.color = Color.green;
     }
 }
