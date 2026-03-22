@@ -13,6 +13,8 @@ public class PlayerInteractions : MonoBehaviour
 
     public LayerMask interactableLayer;
 
+    private bool canPlant = true;
+
     public Tile tilePreview;
     private Tilemap tilemap;
     private Vector3Int lastPreviewPos;
@@ -79,4 +81,12 @@ public class PlayerInteractions : MonoBehaviour
             }
         }
     }
+
+    //Getters and setters for the hoe code to place the terrain at the right place
+    public Vector3Int GetLastPreview() { return lastPreviewPos; }
+    public void SetCanPlant(bool newCanPlant) { canPlant = newCanPlant; }
+    public bool GetCanPlant() { return canPlant; }
+    public bool GetHasPreview() { return hasPreview; }
+    public void SetHasPreview(bool newHasPreview) { hasPreview = newHasPreview; }
+    public Tilemap GetTilemap() { return tilemap; }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b241e1cb6cfd841970ead31ce1df26, type: 3}
+  m_Name: Wheat
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItems
+  itemIcon: {fileID: -5659601288151787448, guid: 5019b527e22397d4b81330e5277ff983, type: 3}
+  itemName: Wheat
+  itemDescription: I can use this Wheat to do something
+  itemType: 0
+  stackable: 1
+  maxAmount: 99
+  collectableEffect: {fileID: 11400000, guid: f6f759e0050e501498aba74c945d740d, type: 2}

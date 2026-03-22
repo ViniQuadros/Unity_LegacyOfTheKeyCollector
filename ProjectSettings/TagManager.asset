@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GrassTiles
   - TerrainTiles
+  - PreviewTiles
   layers:
   - Default
   - TransparentFX

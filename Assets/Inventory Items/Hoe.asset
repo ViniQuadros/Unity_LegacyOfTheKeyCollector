@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItems
   itemIcon: {fileID: -554010742415259762, guid: f4908b98ff59e884eae141f524f052da, type: 3}
   itemName: Hoe
-  itemDescription: I can use this to prepare the soil for planting.
+  itemDescription: I can use this to prepare the soil for planting. (Hold L. Shift
+    to use)
   itemType: 0
   stackable: 0
   maxAmount: 1
