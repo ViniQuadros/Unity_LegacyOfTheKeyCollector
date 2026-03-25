@@ -12,7 +12,8 @@ public class SpawnPlayer : MonoBehaviour
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.transform.position = point.transform.position;
-                Debug.Log("Spawned");
+                Debug.Log(SceneTransition.spawnID);
+                break;
             }
         }
     }

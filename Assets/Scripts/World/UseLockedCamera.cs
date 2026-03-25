@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class UseLockedCamera : MonoBehaviour
 {
+    public bool activateMainCamera = true;
+
     void Start()
     {
-        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-        camera.SetActive(false);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject camera = player.transform.Find("Main Camera").gameObject;
+        camera.SetActive(activateMainCamera);
+        Debug.Log(activateMainCamera);
     }
 }

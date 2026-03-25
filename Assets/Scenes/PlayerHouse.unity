@@ -4346,6 +4346,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1779556058577107895, guid: ee318a09ae6023541a939d0004e137ec, type: 3}
+      propertyPath: activateMainCamera
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6084293922983441734, guid: ee318a09ae6023541a939d0004e137ec, type: 3}
       propertyPath: m_Name
       value: SpawnManager
